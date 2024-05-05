@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate GPA</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/gpa.css">
+    <script src="/scripts/app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculate GPA</h1>
+        <form id="gpaForm">
+            <div id="subjectInputs">
+                <div class="subjectInput">
+                    <label for="creditHours1">Credit Hours:</label>
+                    <input type="number" id="creditHours1" name="creditHours" min="1" max="6" required>
+                    <label for="grade1">Grade:</label>
+                    <select id="grade1" name="grade" required>
+                        <option value="A+">A+</option>
+                        <option value="A">A</option>
+                        <option value="B+">B+</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                    </select>
+                </div>
+            </div>
+            <div class="buttons">
+                <button type="button" id="add-subject-btn">Add Subject</button>
+                <button type="button" id="calculate-subject-btn">Calculate GPA</button>
+            </div>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    
+</body>
+</html>

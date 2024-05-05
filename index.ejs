@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA/CGPA Calculator</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>GPA/CGPA Calculator</h1>
+        <div class="options">
+            <button onclick="redirectToGPA()">Calculate GPA</button>
+            <button onclick="redirectToCGPA()">Calculate CGPA</button>
+        </div>
+    </div>
+
+    <script>
+        function redirectToGPA() {
+            window.location.href = "/gpa"; // Redirect to GPA calculation page
+        }
+
+        function redirectToCGPA() {
+            window.location.href = "/cgpa"; // Redirect to CGPA calculation page
+        }
+    </script>
+</body>
+</html>
