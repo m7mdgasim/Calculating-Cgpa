@@ -2,6 +2,7 @@ let subjectCount = 1;
 
 const addSubjectBtnElement = document.getElementById("add-subject-btn");
 const calculateGPABtnElement = document.getElementById("calculate-subject-btn");
+const formElement = document.getElementById("gpaForm")
 
 function addSubject() {
     subjectCount++;
@@ -22,14 +23,14 @@ function addSubject() {
     `;
     subjectInputs.appendChild(newSubjectInput);
 }
-
+// okaaaaaaaaaaaaaaaaaaaaaay gotcha
+// a7shak l8eetha gableeni
 function calculateGPA(event) {
     let gpa = 0;
-
     event.preventDefault();
-    const fromData = new FormData(event.target);
-    console.log(formData)
-
+    const formData = new FormData(event.target);
+    const creditHours = formData.get('creditHours')
+    console.log(creditHours)
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `Your GPA: ${gpa}`;
 }
@@ -52,4 +53,4 @@ function getGradePoints(grade) {
 }
 
 addSubjectBtnElement.addEventListener("click", addSubject);
-calculateGPABtnElement.addEventListener("click", calculateGPA);
+formElement.addEventListener("submit", calculateGPA);
