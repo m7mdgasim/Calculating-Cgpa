@@ -16,7 +16,7 @@ function addYear() {
     <label for="yearCreditHours">Total Credit Hours of the year:</label>
     <input type="number" id="yearCreditHours" name="creditHours" min='0' required>
     <label for="grade">GPA:</label>
-    <input type="number" id="grade" name="grade" min="0" required>
+    <input type="number" id="grade" name="grade" min="0" max="4" required>
       `;
   subjectInputs.appendChild(newSubjectInput);
 }
