@@ -1,7 +1,6 @@
 let subjectCount = 1;
 
 const addSubjectBtnElement = document.getElementById("add-subject-btn");
-const calculateGPABtnElement = document.getElementById("calculate-subject-btn");
 const formElement = document.getElementById("gpaForm");
 const modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
