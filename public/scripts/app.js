@@ -21,6 +21,10 @@ function addSubject() {
             <option value=2.60>B</option>
             <option value=2.00>C</option>
         </select>
+        <div id="failed">
+        <label for="failedOnce1">Failed Once</label>
+        <input type="checkbox" id="failedOnce1" name="failedOnce">
+      </div>
     `;
   subjectInputs.appendChild(newSubjectInput);
 }
@@ -40,12 +44,17 @@ function calculateGPA(event) {
     ];
     obj = data.next();
   }
-  const { creditHours, grade } = retrieved;
+
+  const { creditHours, grade, failedOnce } = retrieved;
 
   let sum = 0;
   let totalCreditHours = 0;
   for (let i = 0; i < creditHours.length; i++) {
-    sum += parseFloat(creditHours[i]) * parseFloat(grade[i]);
+    if (failedOnce[i]=== 'on'){
+      sum += parseFloat(creditHours[i]/2) * parseFloat(grade[i]);
+    } else {
+      sum += parseFloat(creditHours[i]) * parseFloat(grade[i]);
+    }
     totalCreditHours += parseFloat(creditHours[i]);
   }
   let gpa = sum / totalCreditHours;
