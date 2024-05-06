@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate GPA</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/gpa.css">
+    <script src="/scripts/app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculate CGPA</h1>
+        <form id="cgpaForm">
+            <div id="subjectInputs">
+                <div class="subjectInput">
+                    <h2>First year</h2>
+                    <label for="yearCreditHours">Total Credit Hours of the year:</label>
+                    <input type="number" id="yearCreditHours" name="creditHours" min="1" max="6" required>
+                    <label for="grade1">GPA:</label>
+                    <input type="number" id="yearCreditHours" name="creditHours" min="1" max="6" required>
+                </div>
+            </div>
+            <div class="buttons">
+                <button type="button" id="add-year-btn">Add Subject</button>
+                <button type="submit" id="calculate-cgpa-btn">Calculate GPA</button>
+            </div>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    
+</body>
+</html>

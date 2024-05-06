@@ -14,8 +14,11 @@ app.use(express.static('public'));
 app.get('/', function(req,res){
     res.render('index');
 })
-app.get('/gpa', function(req,res){
+app.get('/gpa', function(req , res){
     res.render('gpa');
+})
+app.get('/cgpa', function(req , res){
+    res.render('cgpa')
 })
 
 app.listen(3000);
