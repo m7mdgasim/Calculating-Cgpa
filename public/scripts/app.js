@@ -14,43 +14,45 @@ function addSubject() {
         <input type="number" id="creditHours${subjectCount}" name="creditHours" min="1" max="6" required>
         <label for="grade${subjectCount}">Grade:</label>
         <select id="grade${subjectCount}" name="grade" required>
-            <option value="A+">A+</option>
-            <option value="A">A</option>
-            <option value="B+">B+</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
+            <option value=4.00>A+</option>
+            <option value=3.60>A</option>
+            <option value=3.00>B+</option>
+            <option value=2.60>B</option>
+            <option value=2.00>C</option>
         </select>
     `;
     subjectInputs.appendChild(newSubjectInput);
 }
-// okaaaaaaaaaaaaaaaaaaaaaay gotcha
-// a7shak l8eetha gableeni
+
 function calculateGPA(event) {
-    let gpa = 0;
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const creditHours = formData.get('creditHours')
-    console.log(creditHours)
+    // get form data from event
+  var data = new FormData(event.target);
+  data = data.entries();
+  var obj = data.next();
+  var retrieved = {};
+  while (undefined !== obj.value) {
+    // append value to array of values
+    retrieved[obj.value[0]] = [
+      ...(retrieved[obj.value[0]] || []),
+      obj.value[1],
+    ];
+    obj = data.next();
+  }
+  const{creditHours, grade} = retrieved;
+
+    let sum = 0; 
+    let totalCreditHours = 0; 
+    for(let i=0; i< creditHours.length; i++) {
+    sum += parseFloat(creditHours[i])*parseFloat(grade[i]);
+    totalCreditHours += parseFloat(creditHours[i]);
+    }
+    let gpa = (sum/totalCreditHours);
+  
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `Your GPA: ${gpa}`;
 }
 
-function getGradePoints(grade) {
-    switch (grade) {
-        case 'A+':
-            return 4.00;
-        case 'A':
-            return 3.60;
-        case 'B+':
-            return 3.00;
-        case 'B':
-            return 2.60;
-        case 'C':
-            return 2.00;
-        default:
-            return 0;
-    }
-}
 
 addSubjectBtnElement.addEventListener("click", addSubject);
 formElement.addEventListener("submit", calculateGPA);
