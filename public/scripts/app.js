@@ -47,7 +47,7 @@ function calculateGPA(event) {
     sum += parseFloat(creditHours[i])*parseFloat(grade[i]);
     totalCreditHours += parseFloat(creditHours[i]);
     }
-    let gpa = (sum/totalCreditHours);
+    let gpa = (sum/totalCreditHours).toFixed(2);
   
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `Your GPA: ${gpa}`;
