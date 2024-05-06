@@ -19,6 +19,9 @@ function addYear() {
     <input type="number" id="grade" name="grade" min="0" max="4" required>
       `;
   subjectInputs.appendChild(newSubjectInput);
+  if (subjectCount === 4) {
+    addYearBtnElement.style.display = 'none';
+}
 }
 
 function toYears(i){
