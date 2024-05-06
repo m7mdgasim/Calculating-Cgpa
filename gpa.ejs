@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculate GPA</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/gpa.css">
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/gpa.css" />
     <script src="/scripts/app.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>Calculate GPA</h1>
-        <form id="gpaForm">
-            <div id="subjectInputs">
-                <div class="subjectInput">
-                    <label for="creditHours1">Credit Hours:</label>
-                    <input type="number" id="creditHours1" name="creditHours" min="1" max="6" required>
-                    <label for="grade1">Grade:</label>
-                    <select id="grade1" name="grade" required>
-                        <option value=4.00>A+</option>
-                        <option value=3.60>A</option>
-                        <option value=3.00>B+</option>
-                        <option value=2.60>B</option>
-                        <option value=2.00>C</option>
-                    </select>
-                </div>
-            </div>
-            <div class="buttons">
-                <button type="button" id="add-subject-btn">Add Subject</button>
-                <button type="submit" id="calculate-subject-btn">Calculate GPA</button>
-            </div>
-        </form>
-        <div id="result"></div>
-    </div>
+      <h1>Calculate GPA</h1>
+      <form id="gpaForm">
+        <div id="subjectInputs">
+          <div class="subjectInput">
+            <label for="creditHours1">Credit Hours:</label>
+            <input
+              type="number"
+              id="creditHours1"
+              name="creditHours"
+              min="1"
+              max="6"
+              required
+            />
+            <label for="grade1">Grade:</label>
+            <select id="grade1" name="grade" required>
+              <option value="4.00">A+</option>
+              <option value="3.60">A</option>
+              <option value="3.00">B+</option>
+              <option value="2.60">B</option>
+              <option value="2.00">C</option>
+            </select>
+          </div>
+        </div>
+        <div class="buttons">
+          <button type="button" id="add-subject-btn">Add Subject</button>
+          <button type="submit" id="calculate-subject-btn">
+            Calculate GPA
+          </button>
+        </div>
+      </form>
 
-    
-</body>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="modal-body">
+            <p>Your GPA Is</p>
+            <h1 id="result"></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
