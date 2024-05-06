@@ -1,7 +1,6 @@
 let subjectCount = 1;
 
 const addSubjectBtnElement = document.getElementById("add-subject-btn");
-const addYearBtnElement = document.getElementById("add-year-btn");
 const calculateGPABtnElement = document.getElementById("calculate-subject-btn");
 const formElement = document.getElementById("gpaForm");
 const modal = document.getElementById("myModal");
@@ -70,6 +69,5 @@ span.onclick = function () {
 addSubjectBtnElement.addEventListener("click", addSubject);
 formElement.addEventListener("submit", calculateGPA);
 
-addyearBtnElement.addEventListener("click", addYear);
-CGPAFormElement.addEventListener("submit", calculateCGPA);
+
 

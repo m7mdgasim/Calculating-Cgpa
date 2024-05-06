@@ -6,7 +6,7 @@
     <title>Calculate GPA</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/gpa.css">
-    <script src="/scripts/app.js" defer></script>
+    <script src="/scripts/cgpa.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -16,19 +16,29 @@
                 <div class="subjectInput">
                     <h2>First year</h2>
                     <label for="yearCreditHours">Total Credit Hours of the year:</label>
-                    <input type="number" id="yearCreditHours" name="creditHours" min="1" max="6" required>
-                    <label for="grade1">GPA:</label>
-                    <input type="number" id="yearCreditHours" name="creditHours" min="1" max="6" required>
+                    <input type="number" id="yearCreditHours" name="creditHours" min='0' required>
+                    <label for="grade">GPA:</label>
+                    <input type="number" id="grade" name="grade" min="0" required>
                 </div>
             </div>
             <div class="buttons">
-                <button type="button" id="add-year-btn">Add Subject</button>
-                <button type="submit" id="calculate-cgpa-btn">Calculate GPA</button>
+                <button type="button" id="add-year-btn">Add Year</button>
+                <button type="submit" id="calculate-cgpa-btn">Calculate CGPA</button>
             </div>
         </form>
         <div id="result"></div>
     </div>
 
-    
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <div class="modal-body">
+                <p>Your GPA Is</p>
+                <h1 id="result"></h1>
+              </div>
+            </div>
+          </div>
 </body>
 </html>
