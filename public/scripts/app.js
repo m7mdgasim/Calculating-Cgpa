@@ -53,7 +53,7 @@ function calculateGPA(event) {
   let gpa = sum / totalCreditHours;
 
   const resultDiv = document.getElementById("result");
-  resultDiv.innerHTML = gpa;
+  resultDiv.innerHTML = gpa.toFixed(2);
   modal.style.display = "block";
 }
 
